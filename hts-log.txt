@@ -1,0 +1,26 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 20 Jan 2019 11:22:30 at https://fitatmidlife.com/timer/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://fitatmidlife.com/timer/ -O1 "C:\My Web Sites\timer" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:23:09	Warning: 	Moved Permanently for https://fitatmidlife.com/timer/weight-bench-buyers-guide/
+11:23:09	Warning: 	File has moved from https://fitatmidlife.com/timer/weight-bench-buyers-guide/ to https://fitatmidlife.com/weight-bench-buyers-guide/
+11:23:09	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round1.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round2.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round3.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round4.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round5.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round6.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round7.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round8.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:10	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round9.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:11	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round10.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:11	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round11.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:11	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/round12.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+11:23:11	Error: 	"Not Found" (404) at link https://fitatmidlife.com/timer/fightcomplete.mp3 (from https://fitatmidlife.com/timer/timerv5.js?date=20180505)
+
+HTTrack Website Copier/3.49-2 mirror complete in 41 seconds : 24 links scanned, 9 files written (273988 bytes overall) [399354 bytes received at 9740 bytes/sec], 810735 bytes transferred using HTTP compression in 16 files, ratio 21%, 8.0 requests per connection
+(13 errors, 2 warnings, 0 messages)

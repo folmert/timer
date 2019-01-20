@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.fitatmidlife.com	TRUE	/	FALSE	1999999999	__cfduid	de194587fc35044eccb0e9baef92cb5861547979803
+

@@ -1,0 +1,362 @@
+<html>
+
+<!-- Mirrored from fitatmidlife.com/timer/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Jan 2019 10:22:31 GMT -->
+<head>
+	<!-- -->
+	<!-- (C) 2006-2019 -->
+	<!-- https://fitatmidlife.com -->
+	<!-- -->
+
+	<title>Free Workout Timer (PC, MAC, SMARTPHONE, and TABLET)</title>
+
+	<META NAME="DESCRIPTION" CONTENT="The best FREE Workout Timer for fitness - Garage Gym, CrossFit WOD, Boxing, MMA, HIIT, Tabata, EMOM, and interval training - or use in the kitchen or classroom.  Works on Windows, Mac, phone, or tablet.  No app to download or install, [GET STARTED NOW]">
+	<META NAME="Copyright" CONTENT="FitAtMidlife.com, 2006-2018. All rights reserved."> 
+	<meta property="og:url"           content="https://fitatmidlife.com/timer" />
+  	<meta property="og:type"          content="website" />
+  	<meta property="og:title"         content="Free Workout Timer" />
+  	<meta property="og:description"   content="The best FREE Workout Timer for all types of fitness including martial arts, CrossFit, MMA, Tabata, EMOM, and interval training.  Works on PC, Mac, Phone, and Tablet." />
+
+	<style>
+	body
+	{
+		font-family: verdana, arial;
+	}
+
+	h1
+	{
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	h2
+	{
+		text-align:center;
+	}	
+	select
+	{	
+		margin: 2em;
+		border: 2em;
+	}
+	input
+	{
+		margin: 1em;
+	}
+	td.option
+	{
+		text-align:center;
+		font-size: .9em;
+	}
+	
+	.Timer
+	{
+		font-family: Verdana;
+		font-weight: bold;
+	}
+	
+	.TimeDisplay, .TextDisplay, .RoundDisplay
+	{
+		font-family: Verdana;
+		font-weight: bold;
+	}
+	.txtDescription
+	{
+		width:350px;
+	}
+	
+	.Start
+	{
+		font-size: 5em;
+	}
+
+	.rTable { display: table; }
+	.rTableRow { display: table-row; }
+	.rTableHeading { display: table-header-group; }
+	.rTableBody { display: table-row-group; }
+	.rTableFoot { display: table-footer-group; }
+	.rTableCell, .rTableHead { display: table-cell; }	
+
+
+	</style>
+
+	<script src="timerv54be2.js?date=20180505"></script>
+	
+	
+</head>
+<body onload="javascript:Init()">
+<h1>Free Workout Timer</h1>
+
+	<div style="display:none;">
+	
+	<audio src="bell1.mp3" type="audio/mp3" id="Sound" ></audio>
+	
+	<audio  src="bell1.mp3" type="audio/mp3"></audio>
+	<audio  src="buzzer3_x.mp3"></audio>
+	<audio  src="buzzer_x.mp3"></audio>
+	<audio  src="click_x.mp3"></audio>
+	<audio  src="short1.mp3"></audio>
+	<audio  src="short2.mp3"></audio>
+	<audio  src="gong.mp3"></audio>
+	
+	</div>
+
+	
+	<p align="center">
+	<table border=0 width="">
+		<tr><td colspan=2 style="text-align:center;"><p aligh="center"><span id="TextDisplay" style="font-size:0em; width=100%;" class="TextDisplay"></span></p></td></tr>
+		<tr><td colspan=2>&nbsp;</td></tr>
+		<tr><th>Time</th><th>Round</th></tr>
+		<tr>
+			<td style="text-align:right;"><span id="TimeDisplay" style="font-size:0em;" class="TimeDisplay"></span></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:0em; text-display:left;"id="RoundDisplay" class="RoundDisplay"></span></td>
+		</tr>
+		<tr><td><p align="center"><input id="btnStart" class="Start" type="button" onclick="Toggle(this);" style="font-size:2em; width:33%;" value="Start"/>&nbsp;<input id="btnReset" class="Start" type="button" onclick="Reset(this);" style="font-size:2em; width:33%;" value="Reset"/></p></td>
+		<td><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="btnRound" class="Start" type="button" onclick="ResetRound(this);" style="width: 100%; font-size:2em;" value="Reset"/></p></td></tr>
+	</table>
+	</p>
+
+	<p align="center">
+	<table width="50%">
+		<tr>
+			<td></td>
+			<td class="option"  style=" text-align: right">Total Work Time:</td>
+			<td class="option"  style=" text-align: left"><div id="divTotalWorkTime"></div></td>
+			<td class="option"  style=" text-align: right">Total Rest Time:</td>
+			<td class="option"  style=" text-align: left"><div id="divTotalRestTime"></div></td>
+			<td class="option"  style=" text-align: right">Total Elapsed:</td>
+			<td class="option"  style=" text-align: left"><div id="divTotalElapsedTime"></div></td>
+			<td class="option"  style=" text-align: right">Current Time:</td>
+			<td class="option"  style=" text-align: left"><div id="divCurrentTime"></div></td>
+		</tr>
+	</table>
+	<br />
+	<table>
+		<table width="100%">
+			<tr>
+			<td style="text-align:right;">Select saved options:</td>
+			<td style="text-align:left;">
+			<table><tr><td>
+			<select id="OptionSetSelect" onchange="changeOptions(this);" /></td><td><a id="aDeleteOption" style="display:none;" href="javascript:deleteOption();">Delete</a></td></tr>
+			</table>
+			</td>
+		</tr>
+	<tr><td style="text-align:right;">Save this set of options as:</td><td style="text-align:left;"><input type=text id="txtOptionsName" onchange="CookifyAll();"/><input type=button value="Save" onclick="SaveOptions();" /></td></tr>
+	</table>
+
+	</p>
+		
+	<table border="0" width="100%"><tr><td style="text-align:center"><a id="OptionsToggleAnchor" href="javascript:ToggleShowOptions();"><h3>Options (Hide)</h3></a></td></tr></table>
+
+	<div id="OptionsTable" style="display:block;" >
+	<table border="0" width="100%">
+		<tr><td colspan=3>
+		<p align="center">
+		<table>
+			
+		 <tr>
+		 	<td class="option"  style=" text-align: right">
+				Round Length:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlRoundLength" class="ddlLength" name="ddlLength" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+			<td class="option"  style="text-align: right">Round Begin/End Sound</td>
+			<td class="option"  style="text-align: left"><select id="ddlBeginSound" class="ddlBeginSound" name="ddlBeginSound" onchange="UpdateIntervals(); CookifyAll();"></td>
+			<td class="option"  style=" text-align: right">
+				Text Font Size:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlTextFontSize" name="ddlSize" onchange="CookifyAll(); UpdatePausedDisplay();">>
+				</select>
+			</td>
+			<td class="option"  style="text-align: right">
+				Round Color:</td>
+			<td class="option"  style="text-align: left"><select id="ddlRoundColor" onchange="CookifyAll(); UpdatePausedDisplay();" />
+			</td>
+
+			<td class="option"  style="text-align: right">
+				Precision:</td>
+			<td class="option"  style="text-align: left"><select id="ddlShowTenths" onchange="CookifyAll(); UpdatePausedDisplay();">
+				<option value="Seconds">Seconds</option>
+				<option value="Tenths" selected="selected">Tenths</option>
+				<option value="Hundreds">Hundreds</option>
+				<option value="Thousands">Thousands</option>
+				</select>
+			</td>
+			
+		</tr>
+		<tr>
+			<td class="option"  style=" text-align: right">
+				Warn At:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlWarnAt" class="ddlWarnAt" name="ddlWarnAt" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+			<td class="option"  style="text-align: right">Warn Sound:</td>
+			<td class="option"  style="text-align: left"><select id="ddlWarnSound" class="ddlBeginSound" name="ddlBeginSound" onchange="UpdateIntervals(); CookifyAll();"></td>
+			<td class="option"  style=" text-align: right">
+				Time Font Size:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlTimeFontSize" name="ddlSize" onchange="CookifyAll(); UpdatePausedDisplay();">
+				</select>
+			</td>
+			<td class="option"  style="text-align: right">
+				Interval High Color:</td>
+			<td class="option"  style="text-align: left"><select id="ddlHighColor" onchange="CookifyAll(); UpdatePausedDisplay();" />
+			</td>
+			<td class="option"  style="text-align: right">
+				Count Direction:
+        	</td>
+        	<td class="option"  style="text-align: left">
+				<select id="ddlCountDirection" onchange="CookifyAll(); UpdatePausedDisplay();">
+				<option value="Down" selected>Down</option>
+				<option value="Up">Up</option>
+				</select>
+        	</td>
+			
+			
+		</tr>
+		<tr>
+		 	<td class="option"  style=" text-align: right">
+				High Intensity Interval:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlIntervalHigh" class="ddlLength" name="ddlLength" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+			<td class="option"  style="text-align: right">High Interval Sound:</td>
+			<td class="option"  style="text-align: left"><select id="ddlHighIntervalSound" class="ddlBeginSound" name="ddlBeginSound" onchange="UpdateIntervals(); CookifyAll();"></td>
+			<td class="option"  style=" text-align: right">
+				Round Font Size:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlRoundFontSize" name="ddlSize" onchange="CookifyAll(); UpdatePausedDisplay();">>
+				</select>
+			</td>
+
+			<td class="option"  style="text-align: right">
+				Background Color:</td>
+			<td class="option"  style="text-align: left"><select id="ddlBackgroundColor" onchange="CookifyAll(); UpdatePausedDisplay();" />
+			</td>
+
+			<td class="option"  style=" text-align: right">
+				Delay before start:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlDelay" class="ddlLength" name="ddlLength" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+
+		</tr>
+		<tr>
+
+			<td class="option" style="text-align: right;">Low Intensity Interval:</td>
+			<td class="option" style="text-align: left;">
+				<select id="ddlIntervalLow" class="ddlLength" name="ddlLength" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+
+			<td class="option"  style="text-align: right">Low Interval Sound:</td>
+			<td class="option"  style="text-align: left"><select id="ddlLowIntervalSound" class="ddlBeginSound" name="ddlBeginSound" onchange="UpdateIntervals(); CookifyAll();"></td>
+
+			<td class="option" style="text-align: right;">Start with Interval:</td>
+			<td class="option"  style="text-align: left"><select id="ddlStartInterval" onchange="CookifyAll(); UpdateIntervals();">
+				<option value="" selected="selected"></option>
+				<option value="High">High</option>
+				<option value="Low">Low</option>
+				</select>
+			</td>
+
+
+			<td></td>
+			<td></td>
+
+		<tr>
+		
+			<td class="option"  style=" text-align: right">
+				Rest Length:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlRestLength" class="ddlLength" name="ddlLength" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+		
+
+			<td class="option"  style=" text-align: right">
+				Warn At During Rest:
+			</td>
+			<td class="option"  style=" text-align: left">
+				<select id="ddlRestWarnAt" class="ddlLength" name="ddlLength" onchange="CookifyAll(); UpdateIntervals();" />
+			</td>
+
+		</tr>
+		
+		<tr>
+		
+			<td class="option" style="text-align: right;">Stop After:</td>
+			<td class="option" style="text-align: left;"><select id="ddlStopAt" class="ddlRounds" name="ddlRounds" onchange="CookifyAll(); UpdateIntervals(); StoppedAtRoundLimit=true;"/>
+			</td>
+
+			<td class="option"  style="text-align: right">Final Sound:</td>
+			<td class="option"  style="text-align: left"><select id="ddlFinalSound" class="ddlBeginSound" name="ddlBeginSound" onchange="UpdateIntervals(); CookifyAll();"></td>
+			
+		</tr>
+
+
+	</table>
+	</p>
+	</td></tr>
+</table>
+</td></tr>
+<tr><td colspan=3>&nbsp;<br /></td></tr>
+<tr><td colspan=3 style="text-align:center;"><h2>The Best Free Workout Timer for CrossFit, Garage gym, home gym, and travel workouts</h2><p>Use this interval timer for fitness - Garage Gym, CrossFit WOD, Boxing, MMA, HIIT, Tabata, EMOM, AMRAP, and interval training - or use in the kitchen or classroom.  Works on Windows, Mac, phone, or tablet.  No app to download or install, just click Start above!</p><p align="center">Learn more about building a home or garage gym: <a href="https://fitatmidlife.com/starting-your-own-garage-gym/">Power Racks</a>, <a href="https://fitatmidlife.com/garage-gym-olympic-barbell/">Barbells</a>, <a href="https://fitatmidlife.com/garage-gym-weight-plates/">Bumper Plates</a>, <a href="https://fitatmidlife.com/buyers-guide-to-kettlebells/">Kettlebells</a>,  <a href="https://fitatmidlife.com/indoor-rowing-exercise/">Indoor Rowers</a>, <a href="https://fitatmidlife.com/guide-to-the-best-air-bikes/">Assault Bikes</a>, <a href="https://fitatmidlife.com/backpacks-for-rucking/">Rucking Backpacks</a> and the <a href="https://fitatmidlife.com/glute-ham-developer-guide-to-the-best-ghd/">Glute Ham Developer bench</a>.</p></td></tr>
+<tr><td colspan=3 style="text-align:center;"><p align="center">Newest article: <a href="weight-bench-buyers-guide/index.html">Buyer's Guide to Weight Benches (BEST NEW GEAR FOR 2019!)</a></p></td></tr>
+<tr><td colspan=3>&nbsp;</td></tr>
+<tr><td colspan=3 style="text-align:center;"><p align="center">Need a workout at home or on the road? Check out our <a href="https://fitatmidlife.com/travelwod">Travel and Home Workout Of the Day Generator</a></p>.</td></tr>
+<tr><td colspan=3 style="text-align:center;"><div align="center">Got Air Bike? <a href="https://fitatmidlife.com/air-bike-workouts/">28 Awesome Assault Bike Workouts</a></div></td></tr>
+<tr><td colspan=3>&nbsp;</td></tr>
+</table>
+</div>
+
+<!-- diagnostic and utility UI goes here -->
+<!-- Normally this isn't shown -->
+<div id="divDEBUG" style="display:none; background-color:silver; border: 1px dashed black;" >
+	Advanced Options<br />
+	&nbsp;
+	<select id="ddlDebugSound" class="ddlBeginSound" name="ddlBeginSound">
+    <input type=button value="Test Sound" onclick='PlaySound(document.getElementById("ddlDebugSound").options[document.getElementById("ddlDebugSound").selectedIndex].value);' />
+	&nbsp;
+	Announce Mode: <select id="ddlAnnounceMode" class="ddlAnnounceMode" name="ddlAnnounceMode" ></select>
+	&nbsp;&nbsp;
+	<input type="button" value="Show Cookie Value" onclick='GetDeepLink();' />
+	&nbsp;Decrement:<select id="ddlDecrement" class="ddlLength" name="ddlLength" onChange="CookifyAll(); UpdateIntervals();" />
+	&nbsp;Hold for:<select id="ddlRepeatDecrement" class="" onChange="CookifyAll(); UpdateIntervals();">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select>
+	Rounds
+	<br /><br />
+</div>
+
+<table border="0" width="100%">
+<tr><td colspan=3 style="text-align:center;">v5.0&nbsp; <a href="https://fitatmidlife.com/">Brought to you by FitAtMidLife.com</a>.&nbsp;&nbsp;&nbsp;&copy; 2019&nbsp;</td></tr>
+</table>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-7708996-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-7708996-9');
+</script>
+
+</body>
+
+<!-- Mirrored from fitatmidlife.com/timer/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Jan 2019 10:22:35 GMT -->
+</html>
